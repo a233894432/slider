@@ -6,10 +6,9 @@
     <title>Image Gallery Theme - Jssor Slider, Carousel, Slideshow with Javascript Source Code</title>
 </head>
 <body style="padding: 0; margin: 0; font-family:Arial, Verdana;background-color:#fff;">
+    <script type="text/javascript" src="../js/jssor.slider.debug.js"></script>
     <!-- use jssor.slider.min.js instead for release -->
-    <!-- jssor.slider.min.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+
     <script>
         jssor_slider1_starter = function (containerId) {
 
@@ -67,9 +66,9 @@
 
             var options = {
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $AutoPlayInterval: 1500,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $Idle: 1500,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
                 $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
-                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
                 $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
                 $SlideDuration: 800,                                //Specifies default duration (swipe) for slide in milliseconds
 
@@ -90,14 +89,14 @@
                     $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
                     $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
                     $SpacingX: 8,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
-                    $DisplayPieces: 10,                             //[Optional] Number of pieces to display, default value is 1
+                    $Cols: 10,                             //[Optional] Number of pieces to display, default value is 1
                     $ParkingPosition: 360                           //[Optional] The offset position to park thumbnail
                 }
             };
 
             var jssor_slider1 = new $JssorSlider$(containerId, options);
             //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
+            //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
                 var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
                 if (parentWidth)
@@ -109,7 +108,7 @@
             ScaleSlider();
             $Jssor$.$AddEvent(window, "load", ScaleSlider);
 
-            $Jssor$.$AddEvent(window, "resize", $Jssor$.$WindowResizeFilter(window, ScaleSlider));
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
             //responsive code end
         };
@@ -218,7 +217,7 @@
         </span>
         <!--#endregion Arrow Navigator Skin End -->
         <!--#region Thumbnail Navigator Skin Begin -->
-        <!-- Help: http://www.jssor.com/development/slider-with-thumbnail-navigator-jquery.html -->
+        <!-- Help: http://www.jssor.com/help/thumbnail-navigator.html -->
         <style>
             /* jssor slider thumbnail navigator skin 01 css */
             /*
@@ -319,7 +318,7 @@
             <!-- Thumbnail Item Skin End -->
         </div>
         <!--#endregion Thumbnail Navigator Skin End -->
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         <!-- Trigger -->
         <script>
             jssor_slider1_starter('slider1_container');

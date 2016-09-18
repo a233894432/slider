@@ -7,10 +7,7 @@
         Code</title>
 </head>
 <body style="padding: 0; margin: 0; font-family: Arial, Verdana; background-color: #fff;">
-    <!-- use jssor.slider.min.js instead for release -->
-    <!-- jssor.slider.min.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+    <script type="text/javascript" src="../js/jssor.slider.min.js"></script>
     <script>
         init_jssor_slider1 = function (containerId) {
             var options = {
@@ -23,13 +20,13 @@
 
                     $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
                     $AutoCenter: 0,                                 //[Optional] Auto center thumbnail items in the thumbnail navigator container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 3
-                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange thumbnails, default value is 1
+                    $Rows: 1,                                      //[Optional] Specify lanes to arrange thumbnails, default value is 1
                     $SpacingX: 3,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
                     $SpacingY: 3,                                   //[Optional] Vertical space between each thumbnail in pixel, default value is 0
-                    $DisplayPieces: 9,                              //[Optional] Number of pieces to display, default value is 1
+                    $Cols: 9,                              //[Optional] Number of pieces to display, default value is 1
                     $ParkingPosition: 260,                          //[Optional] The offset position to park thumbnail
                     $Orientation: 1,                                //[Optional] Orientation to arrange thumbnails, 1 horizental, 2 vertical, default value is 1
-                    $DisableDrag: false                            //[Optional] Disable drag or not, default value is false
+                    $NoDrag: false                            //[Optional] Disable drag or not, default value is false
                 }
             };
 
@@ -104,7 +101,7 @@
             </div>
 
             <!--#region Thumbnail Navigator Skin Begin -->
-            <!-- Help: http://www.jssor.com/development/slider-with-thumbnail-navigator-jquery.html -->
+            <!-- Help: http://www.jssor.com/help/thumbnail-navigator.html -->
             <style>
                 /* jssor slider thumbnail navigator skin 04 css */
                 /*
@@ -195,7 +192,7 @@
                 <!-- Thumbnail Item Skin End -->
             </div>
             <!--#endregion Thumbnail Navigator Skin End -->
-            <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+            <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         </div>
         <!-- Trigger -->
         <script>

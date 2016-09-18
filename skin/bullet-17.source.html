@@ -6,8 +6,7 @@
     <title>Bullet Navigator Skin 17 - Jssor Slider, Carousel, Slideshow with Javascript Source Code</title>
 </head> 
 <body style="margin:0;padding:0; background:#fff; font-family: Arial, Verdana, Sans-Serif;">
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+    <script type="text/javascript" src="../js/jssor.slider.min.js"></script>
     <script>
         init_jssor_slider1 = function (containerId) {
 
@@ -20,7 +19,7 @@
                     $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
                     $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
                     $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
-                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $Rows: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
                     $SpacingX: 10,                                  //[Optional] Horizontal space between each item in pixel, default value is 0
                     $SpacingY: 10,                                  //[Optional] Vertical space between each item in pixel, default value is 0
                     $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
@@ -46,7 +45,7 @@
         </div>
 
         <!--#region Bullet Navigator Skin Begin -->
-        <!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->
+        <!-- Help: http://www.jssor.com/tutorial/set-bullet-navigator.html -->
         <style>
             /* jssor slider bullet navigator skin 17 css */
             /*
@@ -80,7 +79,7 @@
         </div>
         <!--#endregion Bullet Navigator Skin End -->
 
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         <!-- Trigger --> 
         <script>
             init_jssor_slider1("slider1_container");

@@ -46,10 +46,9 @@
     </style>
     <!-- it works the same with all jquery version from 1.x to 2.x -->
     <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
-    <!-- use jssor.slider.mini.js (40KB) instead for release -->
-    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+    <script type="text/javascript" src="../js/jssor.slider.mini.js"></script>
+    <!-- use jssor.slider.debug.js instead for debug -->
+
     <script>
         jQuery(document).ready(function ($) {
             //Reference http://www.jssor.com/development/tip-make-responsive-slider.html
@@ -62,20 +61,13 @@
 
             var options = {
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0),
-
-                $CaptionSliderOptions: {                            //[Optional] Options which specifies how to animate caption
-                    $Class: $JssorCaptionSlider$,                   //[Required] Class to create instance to animate caption
-                    $CaptionTransitions: _CaptionTransitions,       //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
-                    $PlayInMode: 1,                                 //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
-                    $PlayOutMode: 3                                 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
-                }
+                $DragOrientation: 3                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0),
             };
 
             var jssor_slider2 = new $JssorSlider$("slider2_container", options);
 
             //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
+            //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
 
                 //reserve blank width for margin+padding: margin+padding-left (10) + margin+padding-right (10)
@@ -161,7 +153,7 @@
                     <div u="caption" t="FLTTR|R" style="position:absolute;left:380px;top:80px;width:130px;height:40px;font-size:36px;color:#fff;line-height:40px;">Please!</div>
                 </div>
             </div>
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         </div>
         <!-- Jssor Slider End -->
         <div id="clearFixDiv" style="display: table; padding: 5px; margin: 0px 5px 5px 0px; border: 1px solid #ccc;">

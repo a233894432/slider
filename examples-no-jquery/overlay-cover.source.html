@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -6,15 +6,14 @@
     <title>Overlay Cover Example - Jssor Slider, Carousel, Slideshow</title>
 </head>
 <body style="font-family:Arial, Verdana;background-color:#fff;">
+    <script type="text/javascript" src="../js/jssor.slider.debug.js"></script>
     <!-- use jssor.slider.min.js instead for release -->
-    <!-- jssor.slider.min.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+
     <script>
 
         jssor_slider1_starter = function (containerId) {
             var options = {
-                $DragOrientation: 3                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $DragOrientation: 3                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
             };
             var jssor_slider1 = new $JssorSlider$(containerId, options);
         };
@@ -57,7 +56,7 @@
         <div style="position:absolute;top:27px;left:-20px;width:50px;height:235px;background-image:url(img/cover/0001-L.png)"></div>
         <div style="position:absolute;top:27px;right:-20px;width:50px;height:235px;background-image:url(img/cover/0001-R.png)"></div>
         <!-- Cover End -->
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         <!-- Trigger -->
         <script>
             jssor_slider1_starter('slider1_container');

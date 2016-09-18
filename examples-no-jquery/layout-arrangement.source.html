@@ -6,14 +6,13 @@
     <title>Layout Arrangement Example - Jssor Slider, Carousel, Slideshow</title>
 </head>
 <body style="font-family:Arial, Verdana;background-color:#fff;">
+    <script type="text/javascript" src="../js/jssor.slider.debug.js"></script>
     <!-- use jssor.slider.min.js instead for release -->
-    <!-- jssor.slider.min.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+
     <script>
         jssor_slider1_starter = function (containerId) {
             var options = {
-                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
                 $BulletNavigatorOptions: {
                     $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
                     $ChanceToShow: 2                                //[Required] 0 Never, 1 Mouse Over, 2 Always
@@ -68,7 +67,7 @@
         </div>
 
         <!--#region Bullet Navigator Skin Begin -->
-        <!-- Help: http://www.jssor.com/development/slider-with-bullet-navigator-jquery.html -->
+        <!-- Help: http://www.jssor.com/tutorial/set-bullet-navigator.html -->
         <style>
             /* jssor slider bullet navigator skin 03 css */
             /*
@@ -141,7 +140,7 @@
         <span u="arrowright" class="jssora03r" title="This is arrow right" style="bottom: 10px; right: 50px; background-color: darkgreen;">
         </span>
         <!--#endregion Arrow Navigator Skin End -->
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         <!-- Trigger -->
         <script>
             jssor_slider1_starter('slider1_container');

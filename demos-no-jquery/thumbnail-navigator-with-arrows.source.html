@@ -6,17 +6,16 @@
     <title>Arrow for Thumbnail Navigator Slider Theme - Jssor Slider</title>
 </head>
 <body style="background:#fff;">
+    <script type="text/javascript" src="../js/jssor.slider.debug.js"></script>
     <!-- use jssor.slider.min.js instead for release -->
-    <!-- jssor.slider.min.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+
     <script>
         jssor_slider1_starter = function (containerId) {
             var options = {
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $Idle: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
                 $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
-                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
                 $UISearchMode: 0,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
 
                 $ThumbnailNavigatorOptions: {
@@ -26,7 +25,7 @@
                     $Loop: 1,                                       //[Optional] Enable loop(circular) of carousel or not, 0: stop, 1: loop, 2 rewind, default value is 1
                     $SpacingX: 3,                                   //[Optional] Horizontal space between each thumbnail in pixel, default value is 0
                     $SpacingY: 3,                                   //[Optional] Vertical space between each thumbnail in pixel, default value is 0
-                    $DisplayPieces: 6,                              //[Optional] Number of pieces to display, default value is 1
+                    $Cols: 6,                              //[Optional] Number of pieces to display, default value is 1
                     $ParkingPosition: 253,                          //[Optional] The offset position to park thumbnail,
 
                     $ArrowNavigatorOptions: {
@@ -41,7 +40,7 @@
             var jssor_slider1 = new $JssorSlider$(containerId, options);
 
             //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
+            //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
                 var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
                 if (parentWidth)
@@ -53,7 +52,7 @@
             ScaleSlider();
             $Jssor$.$AddEvent(window, "load", ScaleSlider);
 
-            $Jssor$.$AddEvent(window, "resize", $Jssor$.$WindowResizeFilter(window, ScaleSlider));
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
             //responsive code end
         };
@@ -135,7 +134,7 @@
             </div>
         </div>
         <!--#region Thumbnail Navigator Skin Begin -->
-        <!-- Help: http://www.jssor.com/development/slider-with-thumbnail-navigator-jquery.html -->
+        <!-- Help: http://www.jssor.com/help/thumbnail-navigator.html -->
         <style>
             /* jssor slider thumbnail navigator skin 07 css */
             /*
@@ -222,7 +221,7 @@
             </div>
             <!-- Thumbnail Item Skin End -->
             <!--#region Arrow Navigator Skin Begin -->
-            <!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
+            <!-- Help: http://www.jssor.com/tutorial/set-arrow-navigator.html -->
             <style>
                 /* jssor slider arrow navigator skin 11 css */
                 /*
@@ -277,7 +276,7 @@
             <!--#endregion Arrow Navigator Skin End -->
         </div>
         <!--#endregion Thumbnail Navigator Skin End -->
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         <!-- Trigger -->
         <script>
             jssor_slider1_starter('slider1_container');

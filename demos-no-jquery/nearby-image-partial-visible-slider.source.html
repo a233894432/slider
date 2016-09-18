@@ -6,10 +6,9 @@
     <title>Nearby Image Partial Visible Slider - Jssor Slider, Carousel, Slideshow</title>
 </head>
 <body style="font-family:Arial, Verdana;background-color:#fff;">
+    <script type="text/javascript" src="../js/jssor.slider.debug.js"></script>
     <!-- use jssor.slider.min.js instead for release -->
-    <!-- jssor.slider.min.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+
     <script>
 
         jssor_slider1_starter = function (containerId) {
@@ -18,11 +17,11 @@
 
                 $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slideshow is auto playing, default value is false
 
-                $ArrowKeyNavigation: true,   			            //Allows arrow key to navigate or not
+                $ArrowKeyNavigation: true,   			            //Allows arrow key to navigate or not, default value is true
                 $SlideWidth: 600,                                   //[Optional] Width of every slide in pixels, the default is width of 'slides' container
                 //$SlideHeight: 300,                                  //[Optional] Height of every slide in pixels, the default is width of 'slides' container
                 $SlideSpacing: 0, 					                //Space between each slide in pixels
-                $DisplayPieces: 2,                                  //Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $Cols: 2,                                  //Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
                 $ParkingPosition: 100,                                //The offset position to park slide (this options applys only when slideshow disabled).
 
                 $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
@@ -35,7 +34,7 @@
 
             var jssor_slider1 = new $JssorSlider$(containerId, options);
             //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
+            //you can remove responsive code if you don't want the slider scales while window resizing
             function ScaleSlider() {
                 var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
                 if (parentWidth)
@@ -47,7 +46,7 @@
             ScaleSlider();
             $Jssor$.$AddEvent(window, "load", ScaleSlider);
 
-            $Jssor$.$AddEvent(window, "resize", $Jssor$.$WindowResizeFilter(window, ScaleSlider));
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
             $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
             //responsive code end
         };
@@ -71,7 +70,7 @@
         </div>
         
         <!--#region Arrow Navigator Skin Begin -->
-        <!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
+        <!-- Help: http://www.jssor.com/tutorial/set-arrow-navigator.html -->
         <style>
             /* jssor slider arrow navigator skin 13 css */
             /*
@@ -106,7 +105,7 @@
         <span u="arrowright" class="jssora13r" style="top: 123px; right: 30px;">
         </span>
         <!--#endregion Arrow Navigator Skin End -->
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         <!-- Trigger -->
         <script>
             jssor_slider1_starter('slider1_container');

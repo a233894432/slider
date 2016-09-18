@@ -6,10 +6,7 @@
     <title>Thumbnail Navigator Skin 10 - Jssor Slider, Carousel, Slideshow with Javascript Source Code</title>
 </head>
 <body style="background:#fff;">
-    <!-- use jssor.slider.min.js instead for release -->
-    <!-- jssor.slider.min.js = (jssor.js + jssor.slider.js) -->
-    <script type="text/javascript" src="../js/jssor.js"></script>
-    <script type="text/javascript" src="../js/jssor.slider.js"></script>
+    <script type="text/javascript" src="../js/jssor.slider.min.js"></script>
     <script>
         jssor_sliderb_starter = function (containerId) {
 
@@ -22,7 +19,7 @@
                     $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
 
                     $ActionMode: 0,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
-                    $DisableDrag: true                              //[Optional] Disable drag or not, default value is false
+                    $NoDrag: true                              //[Optional] Disable drag or not, default value is false
                 }
             };
 
@@ -56,7 +53,7 @@
         </div>
         
         <!--#region Thumbnail Navigator Skin Begin -->
-        <!-- Help: http://www.jssor.com/development/slider-with-thumbnail-navigator-jquery.html -->
+        <!-- Help: http://www.jssor.com/help/thumbnail-navigator.html -->
         <!-- thumbnail navigator container -->
         <div u="thumbnavigator" class="jssort10" style="position: absolute; bottom: 0px; left: 0px; height:30px; width:600px;">
             <div style="filter: alpha(opacity=50); opacity:0.5; position: absolute; display: block;
@@ -72,7 +69,7 @@
         </div>
         <!--#endregion Thumbnail Navigator Skin End -->
 
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
+        <a style="display: none" href="http://www.jssor.com">jQuery Slider</a>
         <!-- Trigger -->
         <script>
             jssor_sliderb_starter('sliderb_container');
